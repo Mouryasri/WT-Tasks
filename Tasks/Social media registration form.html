@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LinkedIn Registration Form</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		.form-container {
+			width: 75%;
+			margin: 40px auto;
+			padding: 20px;
+			background-color: #a3d4e9;
+			border: 1px solid #080808;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.form-group {
+			margin-bottom: 20px;
+		}
+		.form-group label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="password"] {
+			width: 200px;
+			height: 15px;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		.form-group input[type="submit"] {
+			background-color: #0077b5;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.form-group input[type="submit"]:hover {
+			background-color: #005ea5;
+		}
+	</style>
+</head>
+<body>
+	<div class="form-container">
+		<h2>Join LinkedIn Today</h2>
+		<form>
+			<div class="form-group">
+				<b><label for="first-name">First Name:</label></b>
+				<input type="text" id="first-name" name="first-name" required>
+			</div>
+			<div class="form-group">
+				<b><label for="last-name">Last Name:</label></b>
+				<input type="text" id="last-name" name="last-name" required>
+			</div>
+			<div class="form-group">
+				<b><label for="email">Email:</label></b>
+				<input type="email" id="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<b><label for="mobile no">Mobile No:</label></b>
+				<input type="number" id="mobile no" name="mobile no" required>
+			</div>
+			<div class="form-group">
+				<b><label for="location">Location:</label></b>
+				<input type="text" id="location" name="location" required>
+			</div>
+			<div class="form-group">
+				<b><label for="industry">Industry:</label></b>
+				<select id="industry" name="industry" required>
+					<option value="">Select an industry</option>
+					<option value="Software and IT">Software and IT</option>
+					<option value="Finance">Finance</option>
+					<option value="Healthcare">Healthcare</option>
+					<option value="Marketing and Advertising">Marketing and Advertising</option>
+					<option value="Other">Other</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<b><label for="current-company">Current Company:</label></b>
+				<input type="text" id="current-company" name="current-company" required>
+			</div>
+			<div class="form-group">
+				<b><label for="current-title">Current Title:</label></b>
+				<input type="text" id="current-title" name="current-title" required>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Join Now">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

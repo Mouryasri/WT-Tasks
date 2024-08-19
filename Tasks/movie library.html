@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Movie Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+        .movie-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .movie-card {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+        }
+        .movie-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .movie-card h3 {
+            margin: 10px 0;
+        }
+        .movie-card p {
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Netflix Movie Library</h1>
+    </div>
+
+    <div class="header">
+        <img src="https://images.ctfassets.net/y2ske730sjqp/1aONibCke6niZhgPxuiilC/2c401b05a07288746ddf3bd3943fbc76/BrandAssets_Logos_01-Wordmark.jpg?w=940" alt="Netflix Logo" width="400" height="200"> <!-- Replace with your logo file path or URL -->
+        <h1>Netflix Movie Library</h1>
+    </div>
+
+    <div class="movie-list" id="movie-list">
+        <!-- Movie cards will be inserted here -->
+    </div>
+
+    <script>
+        // Sample movie data
+        const movies = [
+            {
+                title: 'Inception',
+                genre: 'Sci-Fi',
+                year: 2010,
+                description: 'A thief who steals corporate secrets through the use of dream-sharing technology.',
+                image: 'https://m.media-amazon.com/images/M/MV5BMjExMjkwNTQ0Nl5BMl5BanBnXkFtZTcwNTY0OTk1Mw@@._V1_.jpg' // Replace with an actual image URL
+            },
+            {
+                title: 'The Dark Knight',
+                genre: 'Action',
+                year: 2008,
+                description: 'When the menace known as the Joker emerges, Batman must accept one of the greatest psychological tests.',
+                image: 'https://m.media-amazon.com/images/S/pv-target-images/e9a43e647b2ca70e75a3c0af046c4dfdcd712380889779cbdc2c57d94ab63902.jpg' // Replace with an actual image URL
+            },
+            {
+                title: 'The Matrix',
+                genre: 'Sci-Fi',
+                year: 1999,
+                description: 'A computer hacker learns about the true nature of his reality and his role in the war against its controllers.',
+                image: 'https://rukminim2.flixcart.com/image/850/1000/kmns7m80/poster/l/p/f/medium-the-matrix-an-american-maxi-origins-jumbo-medium-size-original-imagfgb6gx9yhwzs.jpeg?q=90&crop=false' // Replace with an actual image URL
+            }
+        ];
+
+        // Function to generate movie cards
+        function generateMovieCards() {
+            const movieList = document.getElementById('movie-list');
+            movies.forEach(movie => {
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+
+                movieCard.innerHTML = `
+                    <img src="${movie.image}" alt="${movie.title}">
+                    <h3>${movie.title}</h3>
+                    <p>${movie.genre} | ${movie.year}</p>
+                    <p>${movie.description}</p>
+                `;
+                
+                movieList.appendChild(movieCard);
+            });
+        }
+
+        // Generate movie cards on page load
+        window.onload = generateMovieCards;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Course Feedback Form</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		.form-container {
+			width: 50%;
+			margin: 40px auto;
+			padding: 20px;
+			background-color: #f9f9f9;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.form-group {
+			margin-bottom: 20px;
+		}
+		.form-group label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		.form-group input[type="text"], .form-group textarea {
+			width: 200px;
+			height: 15px;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		.form-group input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.form-group input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="form-container">
+		<h2>Course Feedback Form</h2>
+		<form>
+			<div class="form-group">
+				<b><label for="course-name">Course Name:</label></b>
+				<input type="text" id="course-name" name="course-name" required>
+			</div>
+			<div class="form-group">
+				<b><label for="instructor-name">Instructor Name:</label></b>
+				<input type="text" id="instructor-name" name="instructor-name" required>
+			</div>
+			<div class="form-group">
+				<b><label for="overall-rating">Overall Rating:</label></b>
+				<select id="overall-rating" name="overall-rating" required>
+					<option value="">Select a rating</option>
+					<option value="1">1 (Poor)</option>
+					<option value="2">2 (Fair)</option>
+					<option value="3">3 (Good)</option>
+					<option value="4">4 (Very Good)</option>
+					<option value="5">5 (Excellent)</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<b><label for="content-rating">Content Rating:</label></b>
+				<select id="content-rating" name="content-rating" required>
+					<option value="">Select a rating</option>
+					<option value="1">1 (Poor)</option>
+					<option value="2">2 (Fair)</option>
+					<option value="3">3 (Good)</option>
+					<option value="4">4 (Very Good)</option>
+					<option value="5">5 (Excellent)</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<b><label for="presentation-rating">Presentation Rating:</label></b>
+				<select id="presentation-rating" name="presentation-rating" required>
+					<option value="">Select a rating</option>
+					<option value="1">1 (Poor)</option>
+					<option value="2">2 (Fair)</option>
+					<option value="3">3 (Good)</option>
+					<option value="4">4 (Very Good)</option>
+					<option value="5">5 (Excellent)</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<b><label for="comments">Comments:</label></b>
+				<textarea id="comments" name="comments" required></textarea>
+			</div>
+			<div class="form-group">
+				<b><label for="suggestions">Suggestions:</label></b>
+				<textarea id="suggestions" name="suggestions" required></textarea>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Submit Feedback">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

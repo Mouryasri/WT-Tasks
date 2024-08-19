@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas and Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        canvas {
+            border: 1px solid #333;
+            background-color: #fff;
+            margin: 30px 0;
+            width: 75%;
+            max-width: 800px;
+        }
+
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .controls button {
+            margin: 2px;
+            padding: 10px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .controls button:hover {
+            background-color: #555;
+        }
+
+        video {
+            border: 1px solid #333;
+            border-radius: 3px;
+            width: 75%;
+            max-width:500px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Control Buttons -->
+    <div class="controls">
+        <button onclick="drawRectangle()">Rectangle</button>
+        <button onclick="drawCircle()">Circle</button>
+        <button onclick="drawLine()">Line</button>
+        <button onclick="drawText()">Text</button>
+        <button onclick="drawImage()">Image</button>
+        <button onclick="clearCanvas()">Clear</button>
+    </div>
+
+    <!-- Canvas Element -->
+    <canvas id="myCanvas" width="800" height="400"></canvas>
+
+    <!-- Video Player -->
+    <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Get the canvas and context
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw a rectangle
+        function drawRectangle() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#FF6F61'; // Set fill color
+            ctx.fillRect(50, 50, 200, 120); // x=50, y=50, width=200, height=120
+            ctx.strokeStyle = '#333'; // Set stroke color
+            ctx.lineWidth = 2; // Set stroke width
+            ctx.strokeRect(50, 50, 200, 120);
+        }
+
+        // Draw a circle
+        function drawCircle() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.arc(350, 100, 70, 0, Math.PI * 2, false); // x=350, y=100, radius=70
+            ctx.fillStyle = '#6B5B95';
+            ctx.fill();
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        // Draw a line
+        function drawLine() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.moveTo(100, 250); // Start point x=100, y=250
+            ctx.lineTo(700, 350); // End point x=700, y=350
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = '#FFCC33';
+            ctx.stroke();
+        }
+
+        // Draw text
+        function drawText() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.font = '24px Arial';
+            ctx.fillStyle = '#333';
+            ctx.fillText('Hello, Canvas!', 300, 200); // x=300, y=200
+        }
+
+        // Draw an image
+        function drawImage() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const img = new Image();
+            img.src = 'pawan.jpg';
+            img.onload = function() {
+                ctx.drawImage(img, 200,175,200,200); // x=325, y=150
+            };
+        }
+
+        // Clear the canvas
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+
+</body>
+</html>

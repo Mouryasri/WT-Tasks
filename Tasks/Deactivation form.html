@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Whatsapp</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		.form-container {
+			width: 75%;
+			margin: 40px auto;
+			padding: 20px;
+			background-color: #f9f9f9;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.form-group {
+			margin-bottom: 20px;
+		}
+		.form-group label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="password"] {
+			width: 200px;
+			height: 15px;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		.form-group input[type="submit"] {
+			background-color: #11d211;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.form-group input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="form-container">
+		<h2>Deactivate Account</h2>
+		<i><p>Are you sure you want to deactivate your account? This will remove all of your profile information and content from our platform.</p></i>
+		<form>
+			<div class="form-group">
+				<b><label for="username">Username:</label></b>
+				<input type="text" id="username" name="username" required>
+			</div>
+			<div class="form-group">
+				<b><label for="password">Password:</label></b>
+				<input type="password" id="password" name="password" required>
+			</div>
+            <div class="form-group">
+				<b><label for="email">Email:</label></b>
+				<input type="email" id="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<b><label for="reason">Reason for deactivation:</label></b>
+				<select id="reason" name="reason" required>
+					<option value="">Select a reason</option>
+					<option value="I no longer use the platform">I no longer use the platform</option>
+					<option value="I'm unhappy with the platform">I'm unhappy with the platform</option>
+					<option value="I'm concerned about my online safety">I'm concerned about my online safety</option>
+					<option value="Other">Other</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<b><label for="comments">Comments:</label></b>
+				<textarea id="comments" name="comments" required></textarea>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Deactivate Account">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
